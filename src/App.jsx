@@ -62,7 +62,7 @@ const App = () => {
       {isError && <ErrorMessage />}
       {articles.length > 0 && <LoadMoreBtn setPage={setPage} />}
       <ImageModal
-        modalIsOpen={modalIsOpen}
+        isOpen={modalIsOpen}
         closeModal={closeModal}
         imageUrl={selectedImage}
       />

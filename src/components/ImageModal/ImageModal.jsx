@@ -15,16 +15,12 @@ const customStyles = {
   overlay: { backgroundColor: "rgba(18, 18, 18, 0.7)" },
 };
 
-const ImageModal = ({ modalIsOpen, closeModal, imageUrl }) => {
+const ImageModal = ({ isOpen, closeModal, imageUrl }) => {
   return (
     <>
-      <Modal
-        modalIsOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        style={customStyles}
-      >
+      <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
         <div>
-          <img src={imageUrl} onClick={closeModal} />
+          <img src={imageUrl} alt="Large preview" onClick={closeModal} />
         </div>
       </Modal>
     </>
