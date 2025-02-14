@@ -17,6 +17,7 @@ const App = () => {
   const [selectedImage, setSelectedImage] = useState("");
 
   useEffect(() => {
+    if (!query) return;
     // axios
     //   .get(
     //     `https://api.unsplash.com/search/photos?client_id=${ACCESS_KEY}&page=1&query=office`
