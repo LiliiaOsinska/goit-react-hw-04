@@ -15,7 +15,7 @@ const App = () => {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
+  const [selectedImage, setSelectedImage] = useState(null);
 
   useEffect(() => {
     if (!query) return;
@@ -65,7 +65,7 @@ const App = () => {
       <ImageModal
         isOpen={modalIsOpen}
         closeModal={closeModal}
-        imageUrl={selectedImage}
+        image={selectedImage}
       />
     </>
   );

@@ -16,7 +16,10 @@ const customStyles = {
   overlay: { backgroundColor: "rgba(18, 18, 18, 0.7)" },
 };
 
-const ImageModal = ({ isOpen, closeModal, imageUrl }) => {
+const ImageModal = ({ isOpen, closeModal, image }) => {
+  console.log(image);
+  if (!image) return null;
+
   return (
     <>
       <Modal
@@ -24,34 +27,28 @@ const ImageModal = ({ isOpen, closeModal, imageUrl }) => {
         onRequestClose={closeModal} // Закриває при кліку поза модалкою або ESC
         style={customStyles}
       >
-        {/* <div className={s.modal_info}>
-          <h2>{imageUrl.description || "Без опису"}</h2>
+        <div className={s.modal_info}>
           <p>
-            <strong>Автор:</strong> {imageUrl.author || "Невідомий"}
-          </p>
-          {imageUrl.authorPhoto && (
-            <img
-              src={imageUrl.authorPhoto}
-              alt={imageUrl.author}
-              className="author-photo"
-            />
-          )}
-          <p>
-            <strong>Лайки:</strong> {imageUrl.likes}
+            <span>Автор: {image.user.name || "Невідомий"}</span>
           </p>
           <p>
-            <strong>Дата публікації:</strong> {imageUrl.date}
+            <span>Лайки: {image.likes}</span>
           </p>
           <a
-            href={imageUrl.originalLink}
+            className={s.image_link}
+            href={image.links.html}
             target="_blank"
             rel="noopener noreferrer"
           >
             Відкрити оригінал
           </a>
-        </div> */}
-        <div className={s.modal_img}>
-          <img src={imageUrl} alt="Large preview" />
+        </div>
+        <div>
+          <img
+            className={s.modal_img}
+            src={image?.urls?.regular}
+            alt="Large preview"
+          />
         </div>
       </Modal>
     </>
