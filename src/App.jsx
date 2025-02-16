@@ -7,6 +7,7 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 import ImageModal from "./components/ImageModal/ImageModal.jsx";
+
 const App = () => {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

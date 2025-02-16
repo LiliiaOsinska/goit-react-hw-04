@@ -2,7 +2,7 @@ import s from "../ImageCard/ImageCard.module.css";
 
 const ImageCard = ({ item, openModal }) => {
   return (
-    <div>
+    <div className={s.card}>
       <img
         className={s.img_item}
         src={item.urls.small}

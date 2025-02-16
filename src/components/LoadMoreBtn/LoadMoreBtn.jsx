@@ -1,4 +1,4 @@
-import s from "../LoadMoreBtn/LoadMoreBtn.jsx";
+import s from "../LoadMoreBtn/LoadMoreBtn.module.css";
 
 const LoadMoreBtn = ({ setPage }) => {
   return (

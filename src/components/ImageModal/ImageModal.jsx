@@ -1,5 +1,6 @@
 import Modal from "react-modal";
 Modal.setAppElement("#root");
+import s from "../ImageModal/ImageModal.module.css";
 
 const customStyles = {
   content: {
@@ -18,9 +19,39 @@ const customStyles = {
 const ImageModal = ({ isOpen, closeModal, imageUrl }) => {
   return (
     <>
-      <Modal isOpen={isOpen} onRequestClose={closeModal} style={customStyles}>
-        <div>
-          <img src={imageUrl} alt="Large preview" onClick={closeModal} />
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={closeModal} // Закриває при кліку поза модалкою або ESC
+        style={customStyles}
+      >
+        {/* <div className={s.modal_info}>
+          <h2>{imageUrl.description || "Без опису"}</h2>
+          <p>
+            <strong>Автор:</strong> {imageUrl.author || "Невідомий"}
+          </p>
+          {imageUrl.authorPhoto && (
+            <img
+              src={imageUrl.authorPhoto}
+              alt={imageUrl.author}
+              className="author-photo"
+            />
+          )}
+          <p>
+            <strong>Лайки:</strong> {imageUrl.likes}
+          </p>
+          <p>
+            <strong>Дата публікації:</strong> {imageUrl.date}
+          </p>
+          <a
+            href={imageUrl.originalLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Відкрити оригінал
+          </a>
+        </div> */}
+        <div className={s.modal_img}>
+          <img src={imageUrl} alt="Large preview" />
         </div>
       </Modal>
     </>
